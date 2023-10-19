@@ -1,6 +1,11 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
+
+    const { user, logOut } = useContext(AuthContext);
 
     const navLinks =
 
@@ -9,6 +14,18 @@ const Navbar = () => {
             <NavLink to={'/addProduct'} className={({ isActive, isPending }) => isPending ? 'Pending' : isActive ? 'bg-[#FF5C1D] rounded hover:bg-[#FF5C1D] hover:text-black' : ''}><li className="font-bold"><a>Add Product</a></li></NavLink>
             <NavLink to={'/myCart'} className={({ isActive, isPending }) => isPending ? 'Pending' : isActive ? 'bg-[#FF5C1D] rounded hover:bg-[#FF5C1D] hover:text-black' : ''}><li className="font-bold"><a>My Cart</a></li></NavLink>
         </>
+
+
+    const handleLogOut = () => {
+        logOut()
+            .then(userCredentials => {
+                toast.success('User logged out successfully!')
+                console.log(userCredentials.user);
+            })
+            .catch(error => {
+                console.log(error.message);
+            })
+    }
 
 
     return (
@@ -35,7 +52,12 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link to={'/login'}><a className="btn bg-[#FF5C1D] hover:bg-[#FF5C1D] font-bold">Login</a></Link>
+                {
+                    user ?
+                        <Link to={'/login'} onClick={handleLogOut}><a className="btn bg-[#FF5C1D] hover:bg-[#FF5C1D] font-bold">Logout</a></Link>
+                        :
+                        <Link to={'/login'}><a className="btn bg-[#FF5C1D] hover:bg-[#FF5C1D] font-bold">Login</a></Link>
+                }
             </div>
         </div>
     );
