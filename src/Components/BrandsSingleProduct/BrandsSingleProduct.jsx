@@ -18,7 +18,9 @@ const BrandsSingleProduct = ({ product }) => {
                     <Link to={`/productDetails/${_id}`}>
                         <button className="btn bg-[#FF5C1D] hover:bg-[#FF5C1D]">Details</button>
                     </Link>
-                    <button className="btn bg-[#FF5C1D] hover:bg-[#FF5C1D]">Update</button>
+                    <Link to={`/updateProduct/${_id}`}>
+                        <button className="btn bg-[#FF5C1D] hover:bg-[#FF5C1D]">Update</button>
+                    </Link>
                 </div>
             </div>
         </div>
