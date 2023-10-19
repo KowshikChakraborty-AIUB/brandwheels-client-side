@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 
-const Login = () => {
+const Registration = () => {
     return (
         <div className="hero min-h-screen">
             <div className="hero-content flex-col">
                 <div className="text-center lg:text-left">
-                    <h1 className="text-5xl font-bold mb-5">Login to Discover Our Products!</h1>
+                    <h1 className="text-5xl font-bold mb-5">Create An Account</h1>
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <form className="card-body">
@@ -22,21 +22,14 @@ const Login = () => {
                             <input type="password" placeholder="password" className="input input-bordered" required />
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn bg-[#FF5C1D] hover:bg-[#FF5C1D] text-black">Login</button>
+                            <button className="btn bg-[#FF5C1D] hover:bg-[#FF5C1D] text-black">Create Account</button>
                         </div>
                         <p>
-                            Don&apos;t have an account?
-                            <Link to={'/registration'} className="text-[#FF5C1D] font-bold ml-2">
-                                Create an account
+                            Already have an account?
+                            <Link to={'/login'} className="text-[#FF5C1D] font-bold ml-2">
+                                Login
                             </Link>
                         </p>
-                        <div>
-                            <p className="font-bold text-center mt-2">OR</p>
-                        </div>
-                        <div className="text-center">
-                            <p className="text-center text-[#090813] font-bold">Login with</p>
-                            <button className="btn w-full bg-[#FF5C1D] hover:bg-[#FF5C1D] my-4 text-black">Google</button>
-                        </div>
                     </form>
                 </div>
             </div>
@@ -44,4 +37,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Registration;
