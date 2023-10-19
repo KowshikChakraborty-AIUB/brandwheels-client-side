@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import PropTypes from 'prop-types';
-import { onAuthStateChanged } from "firebase/auth";
+import { createUserWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import auth from "../firebase/firebase.config";
 
 export const AuthContext = createContext(null);
@@ -11,7 +11,11 @@ const AuthProvider = ({ children }) => {
 
     const [reload, setReload] = useState(true);
 
-    const authInfo = {user, reload}
+    const createUser = (email, password) => {
+        setReload(true);
+        return createUserWithEmailAndPassword(auth, email, password);
+
+    }
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
@@ -19,9 +23,11 @@ const AuthProvider = ({ children }) => {
             setReload(false);
         })
 
-        return () => {unsubscribe()};
+        return () => { unsubscribe() };
 
     }, [])
+
+    const authInfo = { user, reload, createUser }
 
 
     return (
