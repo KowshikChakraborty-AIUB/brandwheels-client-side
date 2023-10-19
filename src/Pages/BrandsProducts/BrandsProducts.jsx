@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
+import BrandsSingleProduct from "../../Components/BrandsSingleProduct/BrandsSingleProduct";
+import AdvertisementsSlider from "../../Components/AdvertisementsSlider/AdvertisementsSlider";
 
 const BrandsProducts = () => {
 
@@ -45,21 +47,19 @@ const BrandsProducts = () => {
         <div>
             {
                 products.length === 0 ?
-                <p className="font-3xl font-bold">Sorry! Not Available at That Moment!</p>
+                    <p className="text-5xl font-bold flex justify-center items-center min-h-screen">Sorry, Products Not Available at This Moment.</p>
 
-                :
-                    <div>
+                    :
+                    <div className="mt-12">
                         {
                             advertisements.map(advertisement =>
-                                <li key={advertisement._id}>
-                                    <img className="w-1/2" src={advertisement.advertisementsImage1}></img>
-                                    <img className="w-1/2" src={advertisement.advertisementsImage2}></img>
-                                    <img className="w-1/2" src={advertisement.advertisementsImage3}></img>
-                                </li>)
+                                <AdvertisementsSlider key={advertisement._id} advertisement={advertisement}></AdvertisementsSlider>)
                         }
-                        {
-                            products.map(product => <li key={product._id}>{product.name}</li>)
-                        }
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                            {
+                                products.map(product => <BrandsSingleProduct key={product._id} product={product}></BrandsSingleProduct>)
+                            }
+                        </div>
                     </div>
             }
         </div>
