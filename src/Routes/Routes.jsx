@@ -8,11 +8,13 @@ import BrandsProducts from "../Pages/BrandsProducts/BrandsProducts";
 import ProductDetails from "../Pages/ProductDetails/ProductDetails";
 import UpdateProduct from "../Pages/UpdateProduct/UpdateProduct";
 import Registration from "../Pages/Registration/Registration";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 const routes = createBrowserRouter([
     {
         path:'/',
         element: <MainLayout></MainLayout>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
