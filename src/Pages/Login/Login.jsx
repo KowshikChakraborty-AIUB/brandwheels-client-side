@@ -5,7 +5,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 
 const Login = () => {
 
-    const { login } = useContext(AuthContext);
+    const { login, googleSignIn } = useContext(AuthContext);
 
 
     const handleLogin = (e) => {
@@ -27,6 +27,17 @@ const Login = () => {
                 toast.error(error.message);
             })
 
+    }
+
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+            .then(userCredentials => {
+                toast.success('User logged in successfully!')
+                console.log(userCredentials.user);
+            })
+            .catch(error => {
+                console.log(error.message);
+            })
     }
 
 
@@ -63,8 +74,8 @@ const Login = () => {
                             <p className="font-bold text-center mt-2">OR</p>
                         </div>
                         <div className="text-center">
-                            <p className="text-center text-[#090813] font-bold">Login with</p>
-                            <button className="btn w-full bg-[#FF5C1D] hover:bg-[#FF5C1D] my-4 text-black">Google</button>
+                            <p className="text-center text-[#090813] font-bold">Sign in with</p>
+                            <button onClick={handleGoogleSignIn} className="btn w-full bg-[#FF5C1D] hover:bg-[#FF5C1D] my-4 text-black">Google</button>
                         </div>
                     </form>
                 </div>

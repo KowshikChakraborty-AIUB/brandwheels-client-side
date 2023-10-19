@@ -5,7 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 
 const Registration = () => {
 
-    const { createUser } = useContext(AuthContext);
+    const { createUser, userProfile } = useContext(AuthContext);
 
 
     const handleCreateUser = (e) => {
@@ -37,6 +37,11 @@ const Registration = () => {
                 toast.success('Account created successfully!')
                 console.log(userCredentials.user);
                 e.target.reset();
+
+                userProfile(userCredentials.user, userName, photoURL)
+                    .then(() => {
+                        console.log('Profile Updated Successfully!');
+                    })
 
             })
             .catch(error => {
