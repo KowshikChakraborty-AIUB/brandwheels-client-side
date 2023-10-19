@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
-const BrandsSingleProduct = ({product}) => {
+const BrandsSingleProduct = ({ product }) => {
 
-    const {name, imageURL, brandName, type, price, rating} = product;
+    const { _id, name, imageURL, brandName, type, price, rating } = product;
 
     return (
         <div className="card card-compact">
@@ -14,7 +15,9 @@ const BrandsSingleProduct = ({product}) => {
                 <p className="font-bold">Price: {price}</p>
                 <p className="font-bold">Rating: {rating}</p>
                 <div className="flex justify-center gap-8">
-                    <button className="btn bg-[#FF5C1D] hover:bg-[#FF5C1D]">Details</button>
+                    <Link to={`/productDetails/${_id}`}>
+                        <button className="btn bg-[#FF5C1D] hover:bg-[#FF5C1D]">Details</button>
+                    </Link>
                     <button className="btn bg-[#FF5C1D] hover:bg-[#FF5C1D]">Update</button>
                 </div>
             </div>
@@ -23,7 +26,7 @@ const BrandsSingleProduct = ({product}) => {
 };
 
 BrandsSingleProduct.propTypes = {
-    product : PropTypes.object.isRequired
+    product: PropTypes.object.isRequired
 }
 
 export default BrandsSingleProduct;

@@ -5,6 +5,7 @@ import AddProduct from "../Pages/AddProduct/AddProduct";
 import MyCart from "../Pages/MyCart/MyCart";
 import Login from "../Pages/Login/Login";
 import BrandsProducts from "../Pages/BrandsProducts/BrandsProducts";
+import ProductDetails from "../Pages/ProductDetails/ProductDetails";
 
 const routes = createBrowserRouter([
     {
@@ -22,7 +23,8 @@ const routes = createBrowserRouter([
             },
             {
                 path: '/myCart',
-                element: <MyCart></MyCart>
+                element: <MyCart></MyCart>,
+                loader: () => fetch('http://localhost:5000/myCarts')
             },
             {
                 path: '/login',
@@ -32,7 +34,12 @@ const routes = createBrowserRouter([
                 path: '/brandsProducts/:brandName',
                 element: <BrandsProducts></BrandsProducts>,
                 loader: () => fetch('http://localhost:5000/brandsProducts')
-            }
+            },
+            {
+                path: '/productDetails/:id',
+                element: <ProductDetails></ProductDetails>,
+                loader: () => fetch('http://localhost:5000/brandsProducts')
+            },
         ]
     }
 ])
