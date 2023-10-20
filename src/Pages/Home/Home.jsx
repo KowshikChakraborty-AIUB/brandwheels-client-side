@@ -1,6 +1,8 @@
 import { useLoaderData } from "react-router-dom";
 import Banner from "../../Components/Banner/Banner";
 import Brands from "../../Components/Brands/Brands";
+import AboutUs from "../../Components/AboutUs/AboutUs";
+import ContactUs from "../../Components/ContactUs/ContactUs";
 
 const Home = () => {
 
@@ -10,6 +12,7 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
+            <AboutUs></AboutUs>
             <div className="mt-12">
                 <div>
                     <h2 className="text-5xl font-bold text-center">Check Out Our Products of Renowned Brand</h2>
@@ -20,6 +23,7 @@ const Home = () => {
                     }
                 </div>
             </div>
+            <ContactUs></ContactUs>
         </div>
     );
 };
