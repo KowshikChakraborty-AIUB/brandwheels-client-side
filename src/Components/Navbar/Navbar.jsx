@@ -13,6 +13,12 @@ const Navbar = () => {
             <NavLink to={'/'} className={({ isActive, isPending }) => isPending ? 'Pending' : isActive ? 'bg-[#FF5C1D] rounded hover:bg-[#FF5C1D] hover:text-black' : ''}><li className="font-bold"><a>Home</a></li></NavLink>
             <NavLink to={'/addProduct'} className={({ isActive, isPending }) => isPending ? 'Pending' : isActive ? 'bg-[#FF5C1D] rounded hover:bg-[#FF5C1D] hover:text-black' : ''}><li className="font-bold"><a>Add Product</a></li></NavLink>
             <NavLink to={'/myCart'} className={({ isActive, isPending }) => isPending ? 'Pending' : isActive ? 'bg-[#FF5C1D] rounded hover:bg-[#FF5C1D] hover:text-black' : ''}><li className="font-bold"><a>My Cart</a></li></NavLink>
+            {
+                user ?
+                    ''
+                    :
+                    <NavLink to={'/registration'} className={({ isActive, isPending }) => isPending ? 'Pending' : isActive ? 'bg-[#FF5C1D] rounded hover:bg-[#FF5C1D] hover:text-black' : ''}><li className="font-bold"><a>Create Account</a></li></NavLink>
+            }
         </>
 
 

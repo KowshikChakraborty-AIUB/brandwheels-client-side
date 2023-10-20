@@ -1,11 +1,14 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const Login = () => {
 
     const { login, googleSignIn } = useContext(AuthContext);
+
+    const location = useLocation();
+    const navigate = useNavigate();
 
 
     const handleLogin = (e) => {
@@ -21,6 +24,7 @@ const Login = () => {
                 toast.success('User logged in successfully!')
                 console.log(userCredentials.user);
                 e.target.reset();
+                navigate(location?.state ? location.state : '/');
 
             })
             .catch(error => {
@@ -34,6 +38,7 @@ const Login = () => {
             .then(userCredentials => {
                 toast.success('User logged in successfully!')
                 console.log(userCredentials.user);
+                navigate(location?.state ? location.state : '/');
             })
             .catch(error => {
                 console.log(error.message);

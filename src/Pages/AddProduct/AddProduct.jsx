@@ -1,3 +1,5 @@
+import { ToastContainer, toast } from "react-toastify";
+
 const AddProduct = () => {
 
     const handleAddProduct = (e) => {
@@ -27,6 +29,8 @@ const AddProduct = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
+                e.target.reset();
+                toast.success('Your product is added successfully!');
             })
     }
 
@@ -103,6 +107,7 @@ const AddProduct = () => {
                 </form>
 
             </div>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };
