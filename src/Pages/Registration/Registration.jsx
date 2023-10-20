@@ -1,11 +1,14 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 
 const Registration = () => {
 
     const { createUser, userProfile } = useContext(AuthContext);
+
+    const location = useLocation();
+    const navigate = useNavigate();
 
 
     const handleCreateUser = (e) => {
@@ -34,9 +37,10 @@ const Registration = () => {
 
         createUser(email, password)
             .then(userCredentials => {
-                toast.success('Account created successfully!')
+                toast.success('Account created successfully!');
                 console.log(userCredentials.user);
                 e.target.reset();
+                navigate(location?.state ? location.state : '/');
 
                 userProfile(userCredentials.user, userName, photoURL)
                     .then(() => {
