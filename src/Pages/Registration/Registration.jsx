@@ -85,7 +85,7 @@ const Registration = () => {
                         <div className="form-control mt-6">
                             <button className="btn bg-[#FF5C1D] hover:bg-[#FF5C1D] text-black">Create Account</button>
                         </div>
-                        <p>
+                        <p className="font-bold">
                             Already have an account?
                             <Link to={'/login'} className="text-[#FF5C1D] font-bold ml-2">
                                 Login

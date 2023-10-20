@@ -70,7 +70,7 @@ const Login = () => {
                         <div className="form-control mt-6">
                             <button className="btn bg-[#FF5C1D] hover:bg-[#FF5C1D] text-black">Login</button>
                         </div>
-                        <p>
+                        <p className="font-bold">
                             Don&apos;t have an account?
                             <Link to={'/registration'} className="text-[#FF5C1D] font-bold ml-2">
                                 Create an account
