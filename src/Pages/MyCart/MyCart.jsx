@@ -12,7 +12,7 @@ const MyCart = () => {
 
     const handleRemoveFromCart = (_id) => {
         console.log(_id);
-        fetch(`http://localhost:5000/myCarts/${_id}`, {
+        fetch(`https://brandshop-server-side-2zj0ix87l-kowshik-chakrabortys-projects.vercel.app/myCarts/${_id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

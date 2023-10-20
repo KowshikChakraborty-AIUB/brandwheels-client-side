@@ -21,7 +21,7 @@ const BrandsProducts = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/advertisements')
+        fetch('https://brandshop-server-side-2zj0ix87l-kowshik-chakrabortys-projects.vercel.app/advertisements')
             .then(res => res.json())
             .then(data => {
                 //console.log(data);

@@ -29,7 +29,7 @@ const ProductDetails = () => {
 
         console.log(addTOCart);
 
-        fetch('http://localhost:5000/myCarts', {
+        fetch('https://brandshop-server-side-2zj0ix87l-kowshik-chakrabortys-projects.vercel.app/myCarts', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -38,7 +38,7 @@ const ProductDetails = () => {
         })
             .then(res => res.json())
             .then(data => {
-                if(data.insertedId){
+                if (data.insertedId) {
                     toast.success('Added to cart successfully! Check your cart list.')
                 }
             })

@@ -19,7 +19,7 @@ const AddProduct = () => {
 
 
 
-        fetch('http://localhost:5000/brandsProducts', {
+        fetch('https://brandshop-server-side-2zj0ix87l-kowshik-chakrabortys-projects.vercel.app/brandsProducts', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -13,14 +13,14 @@ import PrivateRoutes from "./PrivateRoutes";
 
 const routes = createBrowserRouter([
     {
-        path:'/',
+        path: '/',
         element: <MainLayout></MainLayout>,
         errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/brands')
+                loader: () => fetch('https://brandshop-server-side-2zj0ix87l-kowshik-chakrabortys-projects.vercel.app/brands')
             },
             {
                 path: '/addProduct',
@@ -29,7 +29,7 @@ const routes = createBrowserRouter([
             {
                 path: '/myCart',
                 element: <PrivateRoutes><MyCart></MyCart></PrivateRoutes>,
-                loader: () => fetch('http://localhost:5000/myCarts')
+                loader: () => fetch('https://brandshop-server-side-2zj0ix87l-kowshik-chakrabortys-projects.vercel.app/myCarts')
             },
             {
                 path: '/login',
@@ -42,17 +42,17 @@ const routes = createBrowserRouter([
             {
                 path: '/brandsProducts/:brandName',
                 element: <BrandsProducts></BrandsProducts>,
-                loader: () => fetch('http://localhost:5000/brandsProducts')
+                loader: () => fetch('https://brandshop-server-side-2zj0ix87l-kowshik-chakrabortys-projects.vercel.app/brandsProducts')
             },
             {
                 path: '/productDetails/:id',
                 element: <PrivateRoutes><ProductDetails></ProductDetails></PrivateRoutes>,
-                loader: () => fetch('http://localhost:5000/brandsProducts')
+                loader: () => fetch('https://brandshop-server-side-2zj0ix87l-kowshik-chakrabortys-projects.vercel.app/brandsProducts')
             },
             {
                 path: '/updateProduct/:id',
                 element: <PrivateRoutes><UpdateProduct></UpdateProduct></PrivateRoutes>,
-                loader: ({params}) => fetch(`http://localhost:5000/brandsProducts/${params.id}`)
+                loader: ({ params }) => fetch(`https://brandshop-server-side-2zj0ix87l-kowshik-chakrabortys-projects.vercel.app/brandsProducts/${params.id}`)
             }
         ]
     }

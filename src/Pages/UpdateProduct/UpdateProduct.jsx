@@ -24,7 +24,7 @@ const UpdateProduct = () => {
 
 
 
-        fetch(`http://localhost:5000/brandsProducts/${_id}`, {
+        fetch(`https://brandshop-server-side-2zj0ix87l-kowshik-chakrabortys-projects.vercel.app/brandsProducts/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -34,7 +34,7 @@ const UpdateProduct = () => {
             .then(res => res.json())
             .then(data => {
                 //console.log(data);
-                if(data.modifiedCount > 0){
+                if (data.modifiedCount > 0) {
                     toast.success('Products updated successfully!')
                 }
             })
