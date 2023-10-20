@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { BsGoogle } from 'react-icons/bs';
 
 const Login = () => {
 
@@ -21,9 +22,9 @@ const Login = () => {
 
         login(email, password)
             .then(userCredentials => {
-                toast.success('User logged in successfully!')
                 console.log(userCredentials.user);
                 e.target.reset();
+                toast.success('User logged in successfully!');
                 navigate(location?.state ? location.state : '/');
 
             })
@@ -36,8 +37,8 @@ const Login = () => {
     const handleGoogleSignIn = () => {
         googleSignIn()
             .then(userCredentials => {
-                toast.success('User logged in successfully!')
                 console.log(userCredentials.user);
+                toast.success('User logged in successfully!');
                 navigate(location?.state ? location.state : '/');
             })
             .catch(error => {
@@ -79,8 +80,7 @@ const Login = () => {
                             <p className="font-bold text-center mt-2">OR</p>
                         </div>
                         <div className="text-center">
-                            <p className="text-center text-[#090813] font-bold">Sign in with</p>
-                            <button onClick={handleGoogleSignIn} className="btn w-full bg-[#FF5C1D] hover:bg-[#FF5C1D] my-4 text-black">Google</button>
+                            <button onClick={handleGoogleSignIn} className="btn w-full bg-[#FF5C1D] hover:bg-[#FF5C1D] my-4 text-black"><BsGoogle></BsGoogle>Sign in with Google</button>
                         </div>
                     </form>
                 </div>

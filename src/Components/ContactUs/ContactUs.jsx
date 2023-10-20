@@ -1,7 +1,7 @@
 const ContactUs = () => {
     return (
         <div className="mt-12">
-            <h2 className="text-5xl text-center mb-8">Contact Us</h2>
+            <h2 className="text-5xl text-center mb-8 font-bold">Contact Us</h2>
             <div className="flex flex-col md:flex-row gap-6 justify-center md:justify-evenly">
                 <div>
                     <img className="h-20 mx-auto" src={'https://i.ibb.co/mNrxmwX/address-orange.jpg'} alt="" />

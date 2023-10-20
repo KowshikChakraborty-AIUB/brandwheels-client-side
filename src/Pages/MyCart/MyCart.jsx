@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 
@@ -15,15 +15,15 @@ const MyCart = () => {
         fetch(`http://localhost:5000/myCarts/${_id}`, {
             method: 'DELETE'
         })
-        .then(res => res.json())
-        .then(data => {
-            if(data.deletedCount > 0){
-                toast.success('Removed from cart successfully!')
-            }
+            .then(res => res.json())
+            .then(data => {
+                if (data.deletedCount > 0) {
+                    toast.success('Removed from cart successfully!')
+                }
 
-            const remainingCarts = carts.filter(cartRemains => cartRemains._id !== _id);
-            setCarts(remainingCarts);
-        })
+                const remainingCarts = carts.filter(cartRemains => cartRemains._id !== _id);
+                setCarts(remainingCarts);
+            })
     }
 
     return (
@@ -39,7 +39,7 @@ const MyCart = () => {
                                 <div className="badge badge-secondary bg-[#FF5C1D]">{cart.brandName}</div>
                             </h2>
                             <p className="font-bold">Type: {cart.type}</p>
-                            <p className="font-bold">Price: {cart.price}</p>
+                            <p className="font-bold">Price: ${cart.price}</p>
                             <p className="font-bold">Rating: {cart.rating}</p>
                             <div className="flex justify-center mt-4">
                                 <button onClick={() => handleRemoveFromCart(cart._id)} className="btn bg-[#FF5C1D] hover:bg-[#FF5C1D]">Remove</button>

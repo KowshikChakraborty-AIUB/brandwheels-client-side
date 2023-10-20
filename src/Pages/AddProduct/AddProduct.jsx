@@ -74,10 +74,10 @@ const AddProduct = () => {
                             <label className="label">
                                 <span className="label-text">Type</span>
                             </label>
-                            {/* <input type="" name="type" placeholder="Type" className="input input-bordered" required /> */}
-                            <select name="type" form="addProduct">
+                            <input type="text" name="type" placeholder="Type" className="input input-bordered" required />
+                            {/* <select name="type" form="addProduct">
                                 <option value="Car">Car</option>
-                            </select>
+                            </select> */}
                         </div>
                     </div>
                     <div className="md:flex gap-6 mt-10 justify-center items-center">

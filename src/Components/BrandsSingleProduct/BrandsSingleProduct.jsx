@@ -12,7 +12,7 @@ const BrandsSingleProduct = ({ product }) => {
                 <h2 className="card-title">{name}</h2>
                 <p className="font-bold">Brand: {brandName}</p>
                 <p className="font-bold">Type: {type}</p>
-                <p className="font-bold">Price: {price}</p>
+                <p className="font-bold">Price: ${price}</p>
                 <p className="font-bold">Rating: {rating}</p>
                 <div className="flex justify-center gap-8">
                     <Link to={`/productDetails/${_id}`}>
