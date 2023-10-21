@@ -29,7 +29,7 @@ const ProductDetails = () => {
 
         console.log(addTOCart);
 
-        fetch('https://brandshop-server-side-2zj0ix87l-kowshik-chakrabortys-projects.vercel.app/myCarts', {
+        fetch('https://brandshop-server-side-p7oz9je8t-kowshik-chakrabortys-projects.vercel.app/myCarts', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

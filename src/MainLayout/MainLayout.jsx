@@ -15,18 +15,18 @@ const MainLayout = () => {
         <>
             {
                 check ?
-                    <div className="relative" style={{ backgroundColor: 'black', color:'orange'}}>
+                    <div className="relative max-w-6xl mx-auto" style={{ backgroundColor: 'black', color:'orange'}}>
                         <div className="absolute">
-                            <button className="btn ml-0 md:ml-80 mt-20 md:mt-4 bg-[#FF5C1D] hover:bg-[#FF5C1D]" onClick={change}>Dark/Light</button>
+                            <button className="btn mt-20 bg-[#FF5C1D] hover:bg-[#FF5C1D]" onClick={change}>Dark/Light</button>
                         </div>
                         <Navbar></Navbar>
                         <Outlet></Outlet>
                         <Footer></Footer>
                     </div>
                     :
-                    <div className="relative">
+                    <div className="relative max-w-6xl mx-auto">
                         <div className="absolute">
-                            <button className="btn ml-0 md:ml-80 mt-20 md:mt-4 bg-[#FF5C1D] hover:bg-[#FF5C1D]" onClick={change}>Dark/Light</button>
+                            <button className="btn mt-20 bg-[#FF5C1D] hover:bg-[#FF5C1D]" onClick={change}>Dark/Light</button>
                         </div>
                         <Navbar></Navbar>
                         <Outlet></Outlet>

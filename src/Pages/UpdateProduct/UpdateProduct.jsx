@@ -24,7 +24,7 @@ const UpdateProduct = () => {
 
 
 
-        fetch(`https://brandshop-server-side-2zj0ix87l-kowshik-chakrabortys-projects.vercel.app/brandsProducts/${_id}`, {
+        fetch(`https://brandshop-server-side-p7oz9je8t-kowshik-chakrabortys-projects.vercel.app/brandsProducts/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -42,12 +42,12 @@ const UpdateProduct = () => {
 
 
     return (
-        <div className="hero min-h-screen">
+        <div className="hero min-h-screen overflow-x-hidden">
             <div className="hero-content flex-col">
-                <div className="text-center lg:text-left">
+                <div className="text-center lg:text-left mt-10 md:mt-0">
                     <h1 className="text-5xl font-bold text-center">Update a Product</h1>
                 </div>
-                <form onSubmit={handleUpdateProduct} id="addProduct" className="bg-white shadow-xl px-5 py-5">
+                <form onSubmit={handleUpdateProduct} id="addProduct" className="bg-white shadow-xl px-5 py-5 w-3/4 md:w-full">
                     <div className="md:flex gap-6 mt-10 justify-center items-center">
                         <div className="form-control md:w-1/2">
                             <label className="label">

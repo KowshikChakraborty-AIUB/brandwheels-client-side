@@ -19,7 +19,7 @@ const AddProduct = () => {
 
 
 
-        fetch('https://brandshop-server-side-2zj0ix87l-kowshik-chakrabortys-projects.vercel.app/brandsProducts', {
+        fetch('https://brandshop-server-side-p7oz9je8t-kowshik-chakrabortys-projects.vercel.app/brandsProducts', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -35,12 +35,12 @@ const AddProduct = () => {
     }
 
     return (
-        <div className="hero min-h-screen">
+        <div className="hero min-h-screen overflow-x-hidden">
             <div className="hero-content flex-col">
                 <div className="text-center lg:text-left">
-                    <h1 className="text-5xl font-bold text-center">Add a Product</h1>
+                    <h1 className="text-5xl font-bold text-center mt-10 md:mt-0">Add a Product</h1>
                 </div>
-                <form onSubmit={handleAddProduct} id="addProduct" className="bg-white shadow-xl px-5 py-5">
+                <form onSubmit={handleAddProduct} id="addProduct" className="bg-white shadow-xl px-5 py-5 w-3/4 md:w-full">
                     <div className="md:flex gap-6 mt-10 justify-center items-center">
                         <div className="form-control md:w-1/2">
                             <label className="label">
